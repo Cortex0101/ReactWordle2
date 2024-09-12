@@ -1,6 +1,5 @@
 // React-related imports
 import { useContext } from "react";
-import { Container, Row, Col, Button, Stack } from "react-bootstrap";
 
 // Internal context providers (like global app contexts)
 import { GameContext } from "../contexts/GameContext";

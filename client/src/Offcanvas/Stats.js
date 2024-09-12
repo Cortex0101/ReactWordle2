@@ -1,9 +1,9 @@
-import { useState } from 'react';
-import { MenuContext } from "../contexts/MenuContext";
+// React-related imports
 import { useContext } from "react";
+import { Offcanvas } from "react-bootstrap";
 
-import Button from 'react-bootstrap/Button';
-import Offcanvas from 'react-bootstrap/Offcanvas';
+// Internal context providers (like global app contexts)
+import { MenuContext } from "../contexts/MenuContext";
 
 
 const Stats = () => {

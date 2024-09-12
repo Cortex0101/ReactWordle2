@@ -1,13 +1,10 @@
 import React from "react";
-
-import "./Help.css"
-
-import { useState } from 'react';
-import Button from 'react-bootstrap/Button';
-import Modal from 'react-bootstrap/Modal';
+import { useContext } from "react";
+import { Modal, Button } from "react-bootstrap";
 
 import { MenuContext } from "../contexts/MenuContext";
-import { useContext } from "react";
+
+import "./Help.css"
 
 const Help = () => {
     const toggleHelpOpen = useContext(MenuContext).toggleHelpOpen;

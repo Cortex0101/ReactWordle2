@@ -1,5 +1,5 @@
 // React-related imports
-import { Container, Row, Col, Form } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
 
 // Internal styles
 import './Board.css';

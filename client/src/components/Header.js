@@ -3,7 +3,7 @@ import React, { useContext } from "react";
 import { Container, Navbar, ButtonGroup, Button } from "react-bootstrap";
 
 // Third-party libraries or packages
-import { GoogleOAuthProvider, GoogleLogin } from '@react-oauth/google';
+import { GoogleLogin } from '@react-oauth/google';
 
 // Internal context providers (like global app contexts)
 import { MenuContext } from "../contexts/MenuContext";
@@ -17,14 +17,6 @@ const Header = () => {
     const isAuthenticated = useContext(UserContext).isAuthenticated;
     const handleLoginSuccess = useContext(UserContext).handleLoginSuccess;
     const handleLogout = useContext(UserContext).handleLogout;
-
-    const handleSuccess = (response) => {
-        console.log("Login Success:", response);
-    };
-
-    const handleError = () => {
-        console.log("Login Failed");
-    };
 
     const renderSignInButton = () => {
         if (isAuthenticated) {

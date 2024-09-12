@@ -1,13 +1,10 @@
 import React from "react";
-
-import "./Settings.css"
-
-import { useState } from 'react';
-import Button from 'react-bootstrap/Button';
-import Modal from 'react-bootstrap/Modal';
+import { Modal, Button } from "react-bootstrap";
+import { useContext } from "react";
 
 import { MenuContext } from "../contexts/MenuContext";
-import { useContext } from "react";
+
+import "./Settings.css"
 
 const Settings = () => {
     const toggleSettingsOpen = useContext(MenuContext).toggleSettingsOpen;
