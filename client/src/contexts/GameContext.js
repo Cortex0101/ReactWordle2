@@ -1,3 +1,4 @@
+// React-related imports
 import { useState, createContext } from "react";
 
 const GameContext = createContext();

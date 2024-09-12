@@ -1,19 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+// 1. React-related imports
+import React from 'react';
 
+// 2. Third-party libraries or packages
 import { GoogleOAuthProvider } from '@react-oauth/google';
 
+// 3. Internal context providers (like global app contexts)
 import { GameProvider } from './contexts/GameContext';
 import { MenuProvider } from './contexts/MenuContext';
 import { UserProvider } from './contexts/UserContext';
 
+// 4. Internal components (application-specific components)
 import Header from './components/Header';
 import Board from './components/Board';
 import Keyboardd from './components/Keyboard';
 
+// 5. Internal off-canvas components
 import Stats from './Offcanvas/Stats';
 import Settings from './Offcanvas/Settings';
 import Help from './Offcanvas/Help';
+
+// 6. Internal styles
+import './App.css'; 
+
 
 function App() {
   return (

@@ -1,5 +1,7 @@
+// React-related imports
 import { Container, Row, Col, Form } from "react-bootstrap";
 
+// Internal styles
 import './Board.css';
 
 const Board = ({wordLength, maxGuesses}) => {

@@ -1,4 +1,7 @@
+// React-related imports
 import React, { useState, useEffect, createContext } from 'react';
+
+// Third-party libraries or packages
 import { GoogleOAuthProvider, GoogleLogin, googleLogout } from '@react-oauth/google';
 import { jwtDecode } from "jwt-decode";
 

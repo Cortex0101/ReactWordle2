@@ -1,12 +1,13 @@
-import React from "react";
+// React-related imports
+import React, { useContext } from "react";
+import { Container, Navbar, ButtonGroup, Button } from "react-bootstrap";
 
+// Third-party libraries or packages
 import { GoogleOAuthProvider, GoogleLogin } from '@react-oauth/google';
 
+// Internal context providers (like global app contexts)
 import { MenuContext } from "../contexts/MenuContext";
 import { UserContext } from "../contexts/UserContext";
-
-import { useContext } from "react";
-import { Container, Navbar, ButtonGroup, Button } from "react-bootstrap";
 
 const Header = () => {
     const toggleStatsOpen = useContext(MenuContext).toggleStatsOpen;

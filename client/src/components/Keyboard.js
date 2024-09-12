@@ -1,8 +1,13 @@
-import { GameContext } from "../contexts/GameContext";
+// React-related imports
+import { useContext } from "react";
 import { Container, Row, Col, Button, Stack } from "react-bootstrap";
 
+// Internal context providers (like global app contexts)
+import { GameContext } from "../contexts/GameContext";
+
+// Internal styles
 import "./Keyboard.css";
-import { useContext } from "react";
+
 
 const Keyboard = () => {
     const layout = useContext(GameContext).keyboardLayout;
