@@ -4,12 +4,19 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import ErrorBoundary from './ErrorBoundary';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
+const body = document.body;
+body.setAttribute('data-bs-theme', 'dark');
+
 root.render(
+<ErrorBoundary>
   <React.StrictMode>
     <App />
   </React.StrictMode>
+  </ErrorBoundary>
 );
 
 // If you want to start measuring performance in your app, pass a function
