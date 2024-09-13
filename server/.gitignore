@@ -1,0 +1,6 @@
+# Ignore server-side node_modules
+node_modules/
+
+# Ignore logs
+logs/
+*.log
