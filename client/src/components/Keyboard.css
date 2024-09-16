@@ -8,9 +8,7 @@
     height: 200px;
     margin: 0px 6px 6px 6px;
     padding-bottom: constant(safe-area-inset-bottom);
-    /* For iOS 11.0 */
     padding-bottom: env(safe-area-inset-bottom);
-    /* For iOS 11.2 and up */
     touch-action: manipulation;
 }
 
@@ -37,8 +35,8 @@
     justify-content: center;
     align-items: center;
     text-transform: uppercase;
-    background-color: #818384;
-    color: white;
+    background-color: var(--keyboard-bg-color);
+    color: var(--keyboard-color);
     touch-action: manipulation;
 }
 

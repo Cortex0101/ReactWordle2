@@ -22,6 +22,7 @@ import Help from './Offcanvas/Help';
 
 // 6. Internal styles
 import './App.css'; 
+import './Theme.css';
 
 function App() {
   return (

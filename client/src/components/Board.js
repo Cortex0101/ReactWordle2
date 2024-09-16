@@ -13,7 +13,7 @@ const Board = ({wordLength, maxGuesses}) => {
 				<Row key={i}>
 					{
 						[...Array(wordLength)].map((_, j) => (
-							<Col key={j} className="border border-light">
+							<Col key={j} className="board-cell">
 							</Col>
 						))
 					}
