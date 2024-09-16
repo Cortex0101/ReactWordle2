@@ -1,4 +1,5 @@
 // React-related imports
+import React from "react";
 import { useContext } from "react";
 import { Offcanvas } from "react-bootstrap";
 

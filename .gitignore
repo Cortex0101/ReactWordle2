@@ -7,3 +7,4 @@ server/node_modules/
 
 # Ignore build files (optional)
 client/build/
+client/dist/

@@ -3,7 +3,7 @@ import React from 'react';
 
 // 2. Third-party libraries or packages
 import { GoogleOAuthProvider } from '@react-oauth/google'
-//import './i18n'; // Ensure i18n is imported
+import './i18n'; // Ensure i18n is imported
 
 // 3. Internal context providers (like global app contexts)
 import { GameProvider } from './contexts/GameContext';

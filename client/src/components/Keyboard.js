@@ -1,5 +1,5 @@
 // React-related imports
-import { useContext } from "react";
+import React, { useContext } from "react";
 
 // Internal context providers (like global app contexts)
 import { GameContext } from "../contexts/GameContext";

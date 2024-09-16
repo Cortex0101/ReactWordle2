@@ -2,13 +2,14 @@
     "name": "server",
     "version": "1.0.0",
     "scripts": {
-      "start": "node src/index.js",
-      "dev": "nodemon src/index.js"
+        "start": "nodemon src/index.js",
+        "dev": "nodemon src/index.js"
     },
     "dependencies": {
-      "express": "^4.17.1"
+        "express": "^4.21.0",
+        "path": "^0.12.7"
     },
     "devDependencies": {
-      "nodemon": "^2.0.7"
+        "nodemon": "^2.0.22"
     }
-  }
+}

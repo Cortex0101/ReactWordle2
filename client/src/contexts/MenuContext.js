@@ -1,5 +1,5 @@
 // React-related imports
-import { useState, createContext } from "react";
+import React, { useState, createContext } from "react";
 
 const MenuContext = createContext();
 
