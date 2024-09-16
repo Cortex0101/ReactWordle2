@@ -4,6 +4,7 @@ import { Container, Navbar, ButtonGroup, Button } from "react-bootstrap";
 
 // Third-party libraries or packages
 import { GoogleLogin } from '@react-oauth/google';
+import { useTranslation } from "react-i18next";
 
 // Internal context providers (like global app contexts)
 import { MenuContext } from "../contexts/MenuContext";
@@ -11,6 +12,8 @@ import { UserContext } from "../contexts/UserContext";
 import IconButton from "./IconButton";
 
 const Header = () => {
+    const { t } = useTranslation(); 
+
     const toggleStatsOpen = useContext(MenuContext).toggleStatsOpen;
     const toggleSettingsOpen = useContext(MenuContext).toggleSettingsOpen;
     const toggleHelpOpen = useContext(MenuContext).toggleHelpOpen;
@@ -41,7 +44,7 @@ const Header = () => {
     return (
         <Navbar className="bg-body-tertiary">
             <Container>
-                <Navbar.Brand href="#home">Wordle2</Navbar.Brand>
+                <Navbar.Brand href="#home">{t('header.title')}</Navbar.Brand>
                 <Navbar.Toggle />
                 <Navbar.Collapse className="justify-content-end">
                     <Navbar.Text>
