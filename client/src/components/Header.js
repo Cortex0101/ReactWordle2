@@ -8,6 +8,7 @@ import { GoogleLogin } from '@react-oauth/google';
 // Internal context providers (like global app contexts)
 import { MenuContext } from "../contexts/MenuContext";
 import { UserContext } from "../contexts/UserContext";
+import IconButton from "./IconButton";
 
 const Header = () => {
     const toggleStatsOpen = useContext(MenuContext).toggleStatsOpen;
@@ -44,10 +45,10 @@ const Header = () => {
                 <Navbar.Toggle />
                 <Navbar.Collapse className="justify-content-end">
                     <Navbar.Text>
-                        <ButtonGroup aria-label="Basic example">
-                            <Button variant="secondary" onClick={toggleStatsOpen}>Left</Button>
-                            <Button variant="secondary" onClick={toggleSettingsOpen}>Middle</Button>
-                            <Button variant="secondary" onClick={toggleHelpOpen}>Right</Button>
+                        <ButtonGroup aria-label="Modal buttons">
+                            <IconButton icon="bi bi-question-circle" variant="secondary" handleClick={toggleHelpOpen} />
+                            <IconButton icon="bi bi-bar-chart" variant="secondary" handleClick={toggleStatsOpen} />
+                            <IconButton icon="bi bi-gear" variant="secondary" handleClick={toggleSettingsOpen} />
                         </ButtonGroup>
                     </Navbar.Text>
 
