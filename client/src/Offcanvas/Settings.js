@@ -11,7 +11,7 @@ import "./Settings.css"
 const Settings = () => {
   const { t } = useTranslation();
 
-  const { theme, toggleTheme, language, changeLanguage, colorBlind, toggleColorBlind, swappedButtons, toggleSwappedButtons } = useContext(UserContext);
+  const { theme, toggleTheme, language, changeLanguage, colorBlind, toggleColorBlind, swappedButtons, toggleSwappedButtons, SUPPORTED_LANGUAGES } = useContext(UserContext);
   const { toggleSettingsOpen, settingsOpen } = useContext(MenuContext);
 
   return (
@@ -85,8 +85,10 @@ const Settings = () => {
               value={language}
               onChange={(e) => changeLanguage(e.target.value)}
             >
-              <option value="en">English</option>
-              <option value="da">Dansk</option>
+              {SUPPORTED_LANGUAGES.map((lang) => (
+                <option key={lang.code} value={lang.code}>{lang.name}</option>
+              ))
+              }
             </FormSelect>
           </ListGroup.Item>
         </ListGroup>

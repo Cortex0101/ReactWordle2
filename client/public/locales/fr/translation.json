@@ -1,0 +1,29 @@
+{
+    "header": {
+      "title": "Wordle 2"
+    },
+    "modals": {
+      "settings": {
+        "title": "Paramètres",
+        "theme": {
+          "title": "Changer le thème",
+          "description": "Choisissez entre le thème clair et le thème sombre"
+        },
+        "colorBlind": {
+          "title": "Daltonien",
+          "description": "Activer le mode daltonien"
+        },
+        "swapButtons": {
+          "title": "Échanger les boutons",
+          "description": "Échanger les boutons"
+        }
+      },
+      "statistics": {
+        "title": "Statistiques"
+      },
+      "help": {
+        "title": "Aide"
+      }
+    }
+  }
+  

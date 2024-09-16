@@ -1,0 +1,29 @@
+{
+    "header": {
+      "title": "Wordle 2"
+    },
+    "modals": {
+      "settings": {
+        "title": "Einstellungen",
+        "theme": {
+          "title": "Thema ändern",
+          "description": "Wählen Sie zwischen dem hellen und dem dunklen Thema"
+        },
+        "colorBlind": {
+          "title": "Farbenblind",
+          "description": "Farbenblindmodus aktivieren"
+        },
+        "swapButtons": {
+          "title": "Tasten tauschen",
+          "description": "Tauschen Sie die Tasten"
+        }
+      },
+      "statistics": {
+        "title": "Statistiken"
+      },
+      "help": {
+        "title": "Hilfe"
+      }
+    }
+  }
+  

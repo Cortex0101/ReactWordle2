@@ -19,6 +19,13 @@ const UserProvider = ({ children }) => {
     const [colorBlind, setColorBlind] = useState(false);
     const [swappedButtons, setSwappedButtons] = useState(false);
 
+    const SUPPORTED_LANGUAGES = [
+        { code: 'dk', name: 'Dansk' },
+        { code: 'en', name: 'English' },
+        { code: 'de', name: 'Deutsch' },
+        { code: 'fr', name: 'Français' }
+    ];
+
     // Check for a logged-in user and settings in localStorage on app load
     useEffect(() => {
         const storedUser = localStorage.getItem('user');
@@ -113,7 +120,8 @@ const UserProvider = ({ children }) => {
             colorBlind,
             toggleColorBlind,
             swappedButtons,
-            toggleSwappedButtons
+            toggleSwappedButtons,
+            SUPPORTED_LANGUAGES
         }}>
             {children}
         </UserContext.Provider>
