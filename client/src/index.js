@@ -13,9 +13,6 @@ import './index.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
-const body = document.body;
-body.setAttribute('data-bs-theme', 'dark');
-
 root.render(
 <ErrorBoundary>
   <React.StrictMode>

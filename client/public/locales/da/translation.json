@@ -17,12 +17,12 @@
         "title": "Byt knapper",
         "description": "Byt om på knapperne"
       }
+    },
+    "statistics": {
+      "title": "Statistikker"
+    },
+    "help": {
+      "title": "Hjælp"
     }
-  },
-  "statistics": {
-    "title": "Statistikker"
-  },
-  "help": {
-    "title": "Hjælp"
   }
 }

@@ -1,9 +1,9 @@
 // 1. React-related imports
-import React from 'react';
+import React, { useContext } from 'react';
 
 // 2. Third-party libraries or packages
 import { GoogleOAuthProvider } from '@react-oauth/google'
-import './i18n'; // Ensure i18n is imported
+import './i18n';
 
 // 3. Internal context providers (like global app contexts)
 import { GameProvider } from './contexts/GameContext';
@@ -22,7 +22,6 @@ import Help from './Offcanvas/Help';
 
 // 6. Internal styles
 import './App.css'; 
-
 
 function App() {
   return (
