@@ -5,12 +5,14 @@
   "homepage": "http://Cortex0101.github.io/wordle2",
   "dependencies": {
     "@react-oauth/google": "^0.12.1",
+    "@testing-library/react": "^16.0.1",
     "@testing-library/user-event": "^13.5.0",
     "bootstrap": "^5.3.3",
     "bootstrap-icons": "^1.11.3",
     "i18next": "^23.15.1",
     "i18next-browser-languagedetector": "^8.0.0",
     "i18next-http-backend": "^2.6.1",
+    "jest": "^27.5.1",
     "jwt-decode": "^4.0.0",
     "react": "^18.2.0",
     "react-bootstrap": "^2.10.4",
@@ -18,10 +20,7 @@
     "react-i18next": "^15.0.1",
     "react-scripts": "5.0.1",
     "react-simple-keyboard": "^3.7.153",
-    "web-vitals": "^2.1.4",
-    "jest": "^27.5.1",
-    "@testing-library/jest-dom": "^6.5.0",
-    "@testing-library/react": "^16.0.1"
+    "web-vitals": "^2.1.4"
   },
   "scripts": {
     "start": "webpack serve --mode development --open",
@@ -32,6 +31,13 @@
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
+  },
+  "jest": {
+    "testEnvironment": "jsdom",
+    "moduleNameMapper": {
+      "\\.(css|less|sass|scss)$": "<rootDir>/src/__mocks__/styleMock.js",
+      "i18next": "<rootDir>/src/__mocks__/i18next.js"
+    }
   },
   "eslintConfig": {
     "extends": [
