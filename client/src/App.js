@@ -19,6 +19,7 @@ import Keyboardd from './components/Keyboard';
 import Stats from './Offcanvas/Stats';
 import Settings from './Offcanvas/Settings';
 import Help from './Offcanvas/Help';
+import SideNavBar from './Offcanvas/SideNavBar';
 
 // 6. Internal styles
 import './App.css'; 
@@ -34,6 +35,7 @@ function App() {
             <Stats />
             <Settings />
             <Help />
+            <SideNavBar />
           </MenuProvider>
           <GameProvider>
             <Board wordLength={5} maxGuesses={6} />

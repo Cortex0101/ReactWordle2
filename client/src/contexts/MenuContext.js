@@ -7,6 +7,7 @@ const MenuProvider = ({ children }) => {
     const [statsOpen, setStatsOpen] = useState(false);
     const [settingsOpen, setSettingsOpen] = useState(false);
     const [helpOpen, setHelpOpen] = useState(false);
+    const [sideNavBarOpen, setSideNavBarOpen] = useState(false);
 
     const toggleStatsOpen = () => {
         setStatsOpen(!statsOpen);
@@ -20,6 +21,10 @@ const MenuProvider = ({ children }) => {
         setHelpOpen(!helpOpen);
     }
 
+    const toggleSideNavBarOpen = () => {
+        setSideNavBarOpen(!sideNavBarOpen);
+    }
+
     return (
         <MenuContext.Provider value={{ 
             statsOpen,
@@ -27,7 +32,9 @@ const MenuProvider = ({ children }) => {
             settingsOpen, 
             toggleSettingsOpen,
             helpOpen,
-            toggleHelpOpen
+            toggleHelpOpen,
+            sideNavBarOpen,
+            toggleSideNavBarOpen
          }}>
             {children}
         </MenuContext.Provider>

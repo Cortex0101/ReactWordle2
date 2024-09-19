@@ -14,13 +14,8 @@ import IconButton from "./IconButton";
 const Header = () => {
     const { t } = useTranslation(); 
 
-    const toggleStatsOpen = useContext(MenuContext).toggleStatsOpen;
-    const toggleSettingsOpen = useContext(MenuContext).toggleSettingsOpen;
-    const toggleHelpOpen = useContext(MenuContext).toggleHelpOpen;
-
-    const isAuthenticated = useContext(UserContext).isAuthenticated;
-    const handleLoginSuccess = useContext(UserContext).handleLoginSuccess;
-    const handleLogout = useContext(UserContext).handleLogout;
+    const { toggleStatsOpen, toggleSettingsOpen, toggleHelpOpen, toggleSideNavBarOpen } = useContext(MenuContext);
+    const { isAuthenticated, handleLoginSuccess, handleLogout } = useContext(UserContext);
 
     const renderSignInButton = () => {
         if (isAuthenticated) {
@@ -52,6 +47,7 @@ const Header = () => {
                             <IconButton icon="bi bi-question-circle" variant="secondary" handleClick={toggleHelpOpen} />
                             <IconButton icon="bi bi-bar-chart" variant="secondary" handleClick={toggleStatsOpen} />
                             <IconButton icon="bi bi-gear" variant="secondary" handleClick={toggleSettingsOpen} />
+                            <IconButton icon="bi bi-list" variant="secondary" handleClick={toggleSideNavBarOpen} />
                         </ButtonGroup>
                     </Navbar.Text>
 
