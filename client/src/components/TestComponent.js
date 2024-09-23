@@ -1,11 +1,19 @@
 import React from "react";
+import { Button } from "react-bootstrap";
 
-import Button from "react-bootstrap/Button";
+import './TestComponent.css'
+
+import { useTranslation } from "react-i18next";
 
 const TestComponent = () => {
+    //const {t} = useTranslation();
+
     return (
-        <Button>Test</Button>
+        <div className="test-div">
+        <h1>Test Component</h1>
+        <Button>Click Me</Button>
+        </div>
     );
-}
+};
 
 export default TestComponent;

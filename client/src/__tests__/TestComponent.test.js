@@ -3,11 +3,9 @@ import { render, screen, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import TestComponent from '../components/TestComponent';
 
-describe('TestComponent', () => {
-  test('renders Wordle 2 title', () => {
+describe('Test component', () => {
+  test('renders Test Component', () => {
     render(<TestComponent />);
-
-    const button = screen.getByText('Test');
-    expect(button).toBeInTheDocument();
+    expect(screen.getByText('Test Component')).toBeInTheDocument();
   });
 });
