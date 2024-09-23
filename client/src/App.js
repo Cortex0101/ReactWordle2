@@ -1,9 +1,9 @@
 // 1. React-related imports
-import React from 'react';
+import React, { useContext } from 'react';
 
 // 2. Third-party libraries or packages
 import { GoogleOAuthProvider } from '@react-oauth/google'
-import './i18n'; // Ensure i18n is imported
+import './i18n';
 
 // 3. Internal context providers (like global app contexts)
 import { GameProvider } from './contexts/GameContext';
@@ -19,10 +19,11 @@ import Keyboardd from './components/Keyboard';
 import Stats from './Offcanvas/Stats';
 import Settings from './Offcanvas/Settings';
 import Help from './Offcanvas/Help';
+import SideNavBar from './Offcanvas/SideNavBar';
 
 // 6. Internal styles
 import './App.css'; 
-
+import './Theme.css';
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
             <Stats />
             <Settings />
             <Help />
+            <SideNavBar />
           </MenuProvider>
           <GameProvider>
             <Board wordLength={5} maxGuesses={6} />

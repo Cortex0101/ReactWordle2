@@ -1,22 +1,28 @@
 {
-    "headings": {
-      "title": "Wordle Clone",
-      "subtitle": "A fun word guessing game!"
-    },
-    "modals": {
-      "settings": {
-        "title": "Indstillinger"
+  "header": {
+    "title": "Wordle 2"
+  },
+  "modals": {
+    "settings": {
+      "title": "Indstillinger",
+      "theme": {
+        "title": "Skift tema",
+        "description": "Vælg mellem lyst og mørkt tema"
       },
-      "statistics": {
-        "title": "Statistikker"
+      "colorBlind": {
+        "title": "Farveblind",
+        "description": "Aktiver farveblind tilstand"
       },
-      "help": {
-        "title": "Hjælp"
+      "swapButtons": {
+        "title": "Byt knapper",
+        "description": "Byt om på knapperne"
       }
     },
-    "game_feedback": {
-      "correct_word": "You guessed the word!",
-      "wrong_word": "Oops! That's not the word.",
-      "next_word_in": "Next word in"
+    "statistics": {
+      "title": "Statistikker"
+    },
+    "help": {
+      "title": "Hjælp"
     }
   }
+}

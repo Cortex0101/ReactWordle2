@@ -1,49 +1,28 @@
 {
-    "headings": {
-      "title": "Wordle Clone",
-      "subtitle": "A fun word guessing game!"
-    },
-    "buttons": {
-      "start_game": "Start Game",
-      "submit_guess": "Submit Guess",
-      "try_again": "Try Again",
-      "close": "Close"
-    },
-    "modals": {
-      "settings": {
-        "title": "Settings",
-        "difficulty": "Difficulty",
-        "sound": "Sound",
-        "language": "Language",
-        "dark_mode": "Dark Mode"
+  "header": {
+    "title": "Wordle 2"
+  },
+  "modals": {
+    "settings": {
+      "title": "Settings",
+      "theme": {
+        "title": "Change Theme",
+        "description": "Choose between light and dark themes"
       },
-      "statistics": {
-        "title": "Statistics",
-        "games_played": "Games Played",
-        "games_won": "Games Won",
-        "win_percentage": "Win Percentage",
-        "current_streak": "Current Streak",
-        "best_streak": "Best Streak"
+      "colorBlind": {
+        "title": "Color Blind",
+        "description": "Enable color blind mode"
       },
-      "help": {
-        "title": "How to Play",
-        "instructions": {
-          "step_1": "Guess the word in six tries.",
-          "step_2": "Each guess must be a valid five-letter word.",
-          "step_3": "The color of the tiles will change to show how close your guess was to the word."
-        },
-        "example": "Example:",
-        "example_word": "CRANE",
-        "example_explanation": {
-          "letter_1": "C is in the word and in the correct position.",
-          "letter_2": "R is in the word but in the wrong position.",
-          "letter_3": "E is not in the word at all."
-        }
+      "swapButtons": {
+        "title": "Swap Buttons",
+        "description": "Swap the buttons"
       }
     },
-    "game_feedback": {
-      "correct_word": "You guessed the word!",
-      "wrong_word": "Oops! That's not the word.",
-      "next_word_in": "Next word in"
+    "statistics": {
+      "title": "Statistics"
+    },
+    "help": {
+      "title": "Help"
     }
   }
+}

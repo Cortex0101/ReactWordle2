@@ -1,3 +1,8 @@
-.board .row .col {
+.board-cell {
+    border: 1px solid var(--board-cell-border-color);
     aspect-ratio: 1/1;
+}
+
+.board {
+    border: 1px solid var(--board-cell-border-color);
 }

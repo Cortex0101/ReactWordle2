@@ -1,0 +1,33 @@
+/* Define base variables (light mode as the default) */
+:root {
+    /* Keyboard */
+    --keyboard-bg-color: #818384;
+    --keyboard-color: #fff;
+
+    /* Board */
+    --board-cell-border-color: #000;
+}
+
+/* Dark theme */
+html[data-bs-theme="dark"] {
+    /* Keyboard */
+    --keyboard-bg-color: #949494;
+    --keyboard-color: #fff;
+
+    /* Board */
+    --board-cell-border-color: #fff;
+}
+
+/* Color-blind mode (light theme) */
+html[data-color-blind="true"] {
+    /* Keyboard */
+    --keyboard-bg-color: #818384;
+    --keyboard-color: #fff;
+}
+
+/* Color-blind mode (dark theme) */
+html[data-bs-theme="dark"][data-color-blind="true"] {
+    /* Keyboard */
+    --keyboard-bg-color: #818384;
+    --keyboard-color: #fff;
+}
