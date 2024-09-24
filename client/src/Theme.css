@@ -6,6 +6,12 @@
 
     /* Board */
     --board-cell-border-color: #000;
+    --board-cell-text-color: #000;
+    
+    --board-max-width: 350px;
+    --board-grid-gap: 5px;
+
+    --board-cell-selected-color: #48484b;
 }
 
 /* Dark theme */
@@ -16,6 +22,10 @@ html[data-bs-theme="dark"] {
 
     /* Board */
     --board-cell-border-color: #fff;
+
+    --board-cell-text-color: #fff;
+
+    --board-cell-selected-color: #48484b;
 }
 
 /* Color-blind mode (light theme) */

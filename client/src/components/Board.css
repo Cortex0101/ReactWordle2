@@ -1,8 +1,24 @@
+.board {
+    max-width: var(--board-max-width);
+}
+
 .board-cell {
     border: 1px solid var(--board-cell-border-color);
+    border-radius: 5%;
     aspect-ratio: 1/1;
 }
 
-.board {
-    border: 1px solid var(--board-cell-border-color);
+.board-cell__content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--board-cell-text-color);
+    width: 100%;
+    height: 100%;
+}
+
+.board-cell.board-cell__selected {
+    border-color: var(--board-cell-selected-color);
 }

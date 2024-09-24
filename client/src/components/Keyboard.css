@@ -71,3 +71,8 @@
     max-width: 120px;
     font-size: 0px;
 }
+
+.icon-keyboard-button {
+    min-width: 63px !important;
+    min-height: 63px !important;
+}
