@@ -26,6 +26,15 @@ const UserProvider = ({ children }) => {
         { code: 'fr', name: 'Français' }
     ];
 
+    const statistics = {
+        gamesPlayed: 35,
+        winPercentage: 94,
+        averageGuesses: 5.32,
+        currentStreak: 4,
+        bestStreak: 32,
+        daysInRow: 7
+    };
+
     // Check for a logged-in user and settings in localStorage on app load
     useEffect(() => {
         const storedUser = localStorage.getItem('user');
@@ -121,7 +130,8 @@ const UserProvider = ({ children }) => {
             toggleColorBlind,
             swappedButtons,
             toggleSwappedButtons,
-            SUPPORTED_LANGUAGES
+            SUPPORTED_LANGUAGES,
+            statistics
         }}>
             {children}
         </UserContext.Provider>

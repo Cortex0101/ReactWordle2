@@ -19,7 +19,16 @@
       }
     },
     "statistics": {
-      "title": "Statistikker"
+      "title": "Statistikker",
+      "general-statistics": {
+        "title": "Generelle statistikker",
+        "gamesPlayed": "Spil",
+        "winPercentage": "Vundet%",
+        "averageGuesses": "Gns. gæt",
+        "currentStreak": "Streak",
+        "bestStreak": "Bedste",
+        "daysInRow": "Dage"
+      }
     },
     "help": {
       "title": "Hvordan spiller man?",
