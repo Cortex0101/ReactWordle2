@@ -23,11 +23,13 @@ const GuessDistribution = () => {
         ))
     );
 
-    
+
     useEffect(() => {
         if (disableAnimations) {
             return;
-        } else {
+        }
+
+        const animate = (timestamp) => {
             guessDistribution.forEach((guess, index) => {
                 let start = null;
                 const startValue = { percentage: 0, total: 0 };
@@ -36,13 +38,15 @@ const GuessDistribution = () => {
                 const step = (timestamp) => {
                     if (!start) start = timestamp;
                     const progress = timestamp - start;
-                    const currentPercentage = Math.min(
-                        startValue.percentage + (progress / ANIMATION_DURATION) * (endValue.percentage - startValue.percentage),
-                        endValue.percentage
-                    );
+                    
                     const currentTotal = Math.min(
                         startValue.total + (progress / ANIMATION_DURATION) * (endValue.total - startValue.total),
                         endValue.total
+                    );
+
+                    const currentPercentage = Math.min(
+                        startValue.percentage + (progress / ANIMATION_DURATION) * (endValue.percentage - startValue.percentage),
+                        endValue.percentage
                     );
 
                     setAnimatedValues((prevValues) => {
@@ -61,7 +65,9 @@ const GuessDistribution = () => {
 
                 requestAnimationFrame(step);
             });
-        }
+        };
+
+        requestAnimationFrame(animate);
     }, [guessDistribution, disableAnimations, ANIMATION_DURATION]);
 
     return (
