@@ -11,12 +11,10 @@ import { MenuContext } from "../contexts/MenuContext";
 import StatisticsGrid from "../components/StatisticsGrid";
 import GuessDistribution from "../components/GuessDistribution";
 
-
 const Stats = () => {
     const { t } = useTranslation();
 
-    const toggleStatsOpen = useContext(MenuContext).toggleStatsOpen;
-    const statsOpen = useContext(MenuContext).statsOpen;
+    const { toggleStatsOpen, statsOpen } = useContext(MenuContext);
 
   return (
     <Offcanvas show={statsOpen} onHide={toggleStatsOpen} placement='bottom' className='h-100'>

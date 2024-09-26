@@ -21,7 +21,7 @@ const Settings = () => {
   const { toggleSettingsOpen, settingsOpen } = useContext(MenuContext);
 
   return (
-    <Modal show={settingsOpen} onHide={toggleSettingsOpen}>
+    <Modal show={settingsOpen} onHide={toggleSettingsOpen} animation={!disableAnimations}>
       <Modal.Header closeButton>
         <Modal.Title>{t('modals.settings.title')}</Modal.Title>
       </Modal.Header>
