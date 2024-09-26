@@ -24,22 +24,22 @@ const StatisticsGrid = () => {
         <Container className="statistics-grid">
             <Row>
                 <Col xs={4} lg={2} className="statistics-grid__col">
-                    <StatisticsBox statistic={generalStatistics.gamesPlayed} description={t('modals.statistics.general-statistics.gamesPlayed')} />
+                    <StatisticsBox statistic={generalStatistics.gamesPlayed} description={t('modals.statistics.general-statistics.gamesPlayed.title')} tooltipText={t('modals.statistics.general-statistics.gamesPlayed.description')} />
                 </Col>
                 <Col xs={4} lg={2} className="statistics-grid__col">
-                    <StatisticsBox statistic={generalStatistics.winPercentage} description={t('modals.statistics.general-statistics.winPercentage')} />
+                    <StatisticsBox statistic={generalStatistics.winPercentage} description={t('modals.statistics.general-statistics.winPercentage.title')} tooltipText={t('modals.statistics.general-statistics.winPercentage.description')} />
                 </Col>
                 <Col xs={4} lg={2} className="statistics-grid__col">
-                    <StatisticsBox statistic={generalStatistics.averageGuesses} description={t('modals.statistics.general-statistics.averageGuesses')} />
+                    <StatisticsBox statistic={generalStatistics.averageGuesses} description={t('modals.statistics.general-statistics.averageGuesses.title')} tooltipText={t('modals.statistics.general-statistics.averageGuesses.description')} />
                 </Col>
                 <Col xs={4} lg={2} className="statistics-grid__col">
-                    <StatisticsBox statistic={generalStatistics.currentStreak} description={t('modals.statistics.general-statistics.currentStreak')} />
+                    <StatisticsBox statistic={generalStatistics.currentStreak} description={t('modals.statistics.general-statistics.currentStreak.title')} tooltipText={t('modals.statistics.general-statistics.currentStreak.description')} />
                 </Col>
                 <Col xs={4} lg={2} className="statistics-grid__col">
-                    <StatisticsBox statistic={generalStatistics.bestStreak} description={t('modals.statistics.general-statistics.bestStreak')} />
+                    <StatisticsBox statistic={generalStatistics.bestStreak} description={t('modals.statistics.general-statistics.bestStreak.title')} tooltipText={t('modals.statistics.general-statistics.bestStreak.description')} />
                 </Col>
                 <Col xs={4} lg={2} className="statistics-grid__col">
-                    <StatisticsBox statistic={generalStatistics.daysInRow} description={t('modals.statistics.general-statistics.daysInRow')} />
+                    <StatisticsBox statistic={generalStatistics.daysInRow} description={t('modals.statistics.general-statistics.daysInRow.title')} tooltipText={t('modals.statistics.general-statistics.daysInRow.description')} />
                 </Col>
             </Row>
         </Container>

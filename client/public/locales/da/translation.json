@@ -26,12 +26,30 @@
       "title": "Statistikker",
       "general-statistics": {
         "title": "Generelle statistikker",
-        "gamesPlayed": "Spil",
-        "winPercentage": "Vundet%",
-        "averageGuesses": "Gns. gæt",
-        "currentStreak": "Streak",
-        "bestStreak": "Bedste",
-        "daysInRow": "Dage"
+        "gamesPlayed": {
+          "title": "Spil",
+          "description": "Antal spil spillet"
+        },
+        "winPercentage": {
+          "title": "Vundet%",
+          "description": "Procentdel af spil vundet"
+        },
+        "averageGuesses": {
+          "title": "Gns. gæt",
+          "description": "Gennemsnitlige gæt per spil"
+        },
+        "currentStreak": {
+          "title": "Streak",
+          "description": "Nuværende vinderstreak"
+        },
+        "bestStreak": {
+          "title": "Bedste",
+          "description": "Længste vinderstreak"
+        },
+        "daysInRow": {
+          "title": "Dage",
+          "description": "Dage spillet i træk"
+        }
       },
       "guess-distribution": {
         "title": "Gætte fordeling"
