@@ -1,11 +1,36 @@
+.board-container {
+    height: calc(100vh - var(--header-height) - var(--keyboard-height) - var(--extra-space));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .board {
-    max-width: var(--board-max-width);
+    max-width: var(--board-max-width) !important;
 }
 
 .board-cell {
     border: 1px solid var(--board-cell-border-color);
     border-radius: 5%;
     aspect-ratio: 1/1;
+}
+
+@keyframes bubble {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.board-cell.letter-added {
+    animation: bubble 0.3s;
 }
 
 .board-cell__content {

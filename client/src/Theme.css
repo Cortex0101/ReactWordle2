@@ -12,6 +12,11 @@
     --board-grid-gap: 5px;
 
     --board-cell-selected-color: #48484b;
+
+    /* Layout */ 
+    --header-height: 70px;
+    --keyboard-height: 200px;
+    --extra-space: 20px;
 }
 
 /* Dark theme */
