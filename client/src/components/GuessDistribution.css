@@ -1,0 +1,53 @@
+
+/*
+Should render a small number label in front of each #1, #2, #3, #4, #5, #6, #F
+Then render a progress bar (with label ie. 63.7%) that represents the percentage of guesses that were that number (multiply by 100). 
+Then render a small number label at the end of the progress bar that represents the number of guesses that were that number.
+*/
+/*
+const GuessDistribution = () => {
+    const { t } = useTranslation();
+    const { GuessDistribution } = useContext(UserContext);
+
+    return (
+        <Stack direction="vertical" className="guess-distribution">
+            {GuessDistribution.map((guess, index) => (
+                <Stack direction="horizontal" key={index} className="guess-distribution__row">
+                    <div className="guess-distribution__label">{index + 1}</div>
+                    <ProgressBar now={guess.percentage * 100} label={`${guess.percentage * 100}%`} className="guess-distribution__progress-bar" />
+                    <div className="guess-distribution__number">{guess.count}</div>
+                </Stack>
+            ))}
+        </Stack>
+    );
+}
+*/
+
+.guess-distribution {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.guess-distribution__row {
+    display: flex;
+    align-items: center;
+}
+
+.guess-distribution__progress-bar {
+    min-height: 28px;
+    margin: 0 1rem 0 0;
+    flex-grow: 1
+}
+
+.guess-distribution__label {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-right: 1rem;
+}
+
+.guess-distribution__number {
+    font-size: 1.5rem;
+    width: 2rem;
+    font-weight: bold;
+}

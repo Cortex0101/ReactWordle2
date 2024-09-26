@@ -28,6 +28,9 @@
         "currentStreak": "Streak",
         "bestStreak": "Bedste",
         "daysInRow": "Dage"
+      },
+      "guess-distribution": {
+        "title": "Gætte fordeling"
       }
     },
     "help": {

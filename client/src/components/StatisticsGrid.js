@@ -18,28 +18,28 @@ and 1x6 grid on extra-large screens
 const StatisticsGrid = () => {
     const { t } = useTranslation();
 
-    const { statistics } = useContext(UserContext);
+    const { generalStatistics } = useContext(UserContext);
 
     return (
         <Container className="statistics-grid">
             <Row>
                 <Col xs={4} lg={2} className="statistics-grid__col">
-                    <StatisticsBox statistic={statistics.gamesPlayed} description={t('modals.statistics.general-statistics.gamesPlayed')} />
+                    <StatisticsBox statistic={generalStatistics.gamesPlayed} description={t('modals.statistics.general-statistics.gamesPlayed')} />
                 </Col>
                 <Col xs={4} lg={2} className="statistics-grid__col">
-                    <StatisticsBox statistic={statistics.winPercentage} description={t('modals.statistics.general-statistics.winPercentage')} />
+                    <StatisticsBox statistic={generalStatistics.winPercentage} description={t('modals.statistics.general-statistics.winPercentage')} />
                 </Col>
                 <Col xs={4} lg={2} className="statistics-grid__col">
-                    <StatisticsBox statistic={statistics.averageGuesses} description={t('modals.statistics.general-statistics.averageGuesses')} />
+                    <StatisticsBox statistic={generalStatistics.averageGuesses} description={t('modals.statistics.general-statistics.averageGuesses')} />
                 </Col>
                 <Col xs={4} lg={2} className="statistics-grid__col">
-                    <StatisticsBox statistic={statistics.currentStreak} description={t('modals.statistics.general-statistics.currentStreak')} />
+                    <StatisticsBox statistic={generalStatistics.currentStreak} description={t('modals.statistics.general-statistics.currentStreak')} />
                 </Col>
                 <Col xs={4} lg={2} className="statistics-grid__col">
-                    <StatisticsBox statistic={statistics.bestStreak} description={t('modals.statistics.general-statistics.bestStreak')} />
+                    <StatisticsBox statistic={generalStatistics.bestStreak} description={t('modals.statistics.general-statistics.bestStreak')} />
                 </Col>
                 <Col xs={4} lg={2} className="statistics-grid__col">
-                    <StatisticsBox statistic={statistics.daysInRow} description={t('modals.statistics.general-statistics.daysInRow')} />
+                    <StatisticsBox statistic={generalStatistics.daysInRow} description={t('modals.statistics.general-statistics.daysInRow')} />
                 </Col>
             </Row>
         </Container>

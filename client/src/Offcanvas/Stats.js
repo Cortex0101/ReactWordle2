@@ -8,10 +8,8 @@ import { useTranslation } from "react-i18next";
 // Internal context providers (like global app contexts)
 import { MenuContext } from "../contexts/MenuContext";
 
-// TEMP REMOVE AND RENDER ON A STATISTICS COMPONENT THAT RENDER 6 STATS
-import StatisticsBox from "../components/StatisticsBox";
-
 import StatisticsGrid from "../components/StatisticsGrid";
+import GuessDistribution from "../components/GuessDistribution";
 
 
 const Stats = () => {
@@ -28,6 +26,8 @@ const Stats = () => {
         <Offcanvas.Body>
           <h3 className="text-center">{t('modals.statistics.general-statistics.title')}</h3>
           <StatisticsGrid />
+          <h3 className="text-center">{t('modals.statistics.guess-distribution.title')}</h3>
+          <GuessDistribution />
         </Offcanvas.Body>
       </Offcanvas>
   );
