@@ -22,7 +22,40 @@
       "title": "Statistikker"
     },
     "help": {
-      "title": "Hjælp"
+      "title": "Hvordan spiller man?",
+      "close": "Luk",
+      "content": {
+        "rules": {
+          "title": "Gæt order på 6 forsøg",
+          "ul": {
+            "li1": "Gæt ordet på 6 forsøg",
+            "li2": "Hver gang du gætter, får du feedback",
+            "li3": "Hvert ord skal være et rigtigt ord"
+          }
+        },
+        "examples": {
+          "title": "Eksempler",
+          "ul": {
+            "li1": "S er korrekt og er på den rigtige plads",
+            "li2": "A er korrekt men er på den forkerte plads",
+            "li3": "R er ikke i ordet",
+            "li4": "Sådan her kunne et gæt se ud"
+          }
+        },
+        "explanation": {
+          "title": "Hvorfor en til wordle kopi?",
+          "ul": {
+            "li1": {
+              "title": "Bedre statistik",
+              "content": "Vi viser mere detaljeret statistik omkring dine spil."
+            },
+            "li2": {
+              "title": "Spil mod computeren",
+              "content": "Når du har gættet ordet, kan du se hvordan computeren ville have gættet."
+            }
+          }
+        }
+      }
     }
   }
 }
