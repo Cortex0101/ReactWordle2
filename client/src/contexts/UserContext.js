@@ -18,6 +18,8 @@ const UserProvider = ({ children }) => {
     const [language, setLanguage] = useState('dk');
     const [colorBlind, setColorBlind] = useState(false);
     const [swappedButtons, setSwappedButtons] = useState(false);
+    const [disableAnimations, setDisableAnimations] = useState(true);
+    const ANIMATION_DURATION = 500;
 
     const SUPPORTED_LANGUAGES = [
         { code: 'dk', name: 'Dansk' },
@@ -62,6 +64,7 @@ const UserProvider = ({ children }) => {
             setLanguage(parsedSettings.language || 'dk');
             setColorBlind(parsedSettings.colorBlind || false);
             setSwappedButtons(parsedSettings.swappedButtons || false);
+            setDisableAnimations(parsedSettings.disableAnimations || false);
         }
 
         // Set the theme on the document element
@@ -126,6 +129,13 @@ const UserProvider = ({ children }) => {
         localStorage.setItem('settings', JSON.stringify({ theme, language, colorBlind, swappedButtons: newSwappedButtons }));
     }
 
+    const toggleDisableAnimations = () => {
+        setDisableAnimations(!disableAnimations);
+
+        // Save the updated disableAnimations in localStorage
+        localStorage.setItem('settings', JSON.stringify({ theme, language, colorBlind, swappedButtons, disableAnimations: !disableAnimations }));
+    }
+
     return (
         <UserContext.Provider value={{
             isAuthenticated,
@@ -140,6 +150,9 @@ const UserProvider = ({ children }) => {
             toggleColorBlind,
             swappedButtons,
             toggleSwappedButtons,
+            disableAnimations,
+            toggleDisableAnimations,
+            ANIMATION_DURATION,
             SUPPORTED_LANGUAGES,
             generalStatistics,
             guessDistribution

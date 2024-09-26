@@ -11,7 +11,13 @@ import "./Settings.css"
 const Settings = () => {
   const { t } = useTranslation();
 
-  const { theme, toggleTheme, language, changeLanguage, colorBlind, toggleColorBlind, swappedButtons, toggleSwappedButtons, SUPPORTED_LANGUAGES } = useContext(UserContext);
+  const { 
+    theme, toggleTheme, 
+    language, changeLanguage, 
+    colorBlind, toggleColorBlind, 
+    swappedButtons, toggleSwappedButtons, 
+    disableAnimations, toggleDisableAnimations,
+    SUPPORTED_LANGUAGES } = useContext(UserContext);
   const { toggleSettingsOpen, settingsOpen } = useContext(MenuContext);
 
   return (
@@ -70,6 +76,23 @@ const Settings = () => {
             <FormCheck id="settings-form-check-3" aria-label="radio 3" type="switch"
               checked={swappedButtons}
               onChange={toggleSwappedButtons}
+            />
+          </ListGroup.Item>
+          <ListGroup.Item
+            as="li"
+            className="d-flex justify-content-between align-items-start"
+            onClick={(e) => {
+              if (e.target.closest('input')) return;
+              e.target.closest('li').querySelector('input').click();
+            }}
+          >
+            <div className="ms-2 me-auto">
+              <div className="fw-bold">{t('modals.settings.disableAnimations.title')}</div>
+              {t('modals.settings.disableAnimations.description')}
+            </div>
+            <FormCheck id="settings-form-check-4" aria-label="radio 2" type="switch"
+              checked={disableAnimations}
+              onChange={toggleDisableAnimations}
             />
           </ListGroup.Item>
           <ListGroup.Item

@@ -16,47 +16,53 @@ Then render a small number label at the end of the progress bar that represents 
 */
 const GuessDistribution = () => {
     const { t } = useTranslation();
-    const { guessDistribution } = useContext(UserContext);
+    const { guessDistribution, disableAnimations, ANIMATION_DURATION } = useContext(UserContext);
     const [animatedValues, setAnimatedValues] = useState(
-        guessDistribution.map(() => ({ percentage: 0, total: 0 }))
+        guessDistribution.map((dist) => (
+            disableAnimations ? { percentage: dist.percentage * 100, total: dist.total } : { percentage: 0, total: 0 }
+        ))
     );
 
+    
     useEffect(() => {
-        guessDistribution.forEach((guess, index) => {
-            let start = null;
-            const duration = 500; // Duration of the animation in milliseconds
-            const startValue = { percentage: 0, total: 0 };
-            const endValue = { percentage: guess.percentage * 100, total: guess.total };
+        if (disableAnimations) {
+            return;
+        } else {
+            guessDistribution.forEach((guess, index) => {
+                let start = null;
+                const startValue = { percentage: 0, total: 0 };
+                const endValue = { percentage: guess.percentage * 100, total: guess.total };
 
-            const step = (timestamp) => {
-                if (!start) start = timestamp;
-                const progress = timestamp - start;
-                const currentPercentage = Math.min(
-                    startValue.percentage + (progress / duration) * (endValue.percentage - startValue.percentage),
-                    endValue.percentage
-                );
-                const currentTotal = Math.min(
-                    startValue.total + (progress / duration) * (endValue.total - startValue.total),
-                    endValue.total
-                );
+                const step = (timestamp) => {
+                    if (!start) start = timestamp;
+                    const progress = timestamp - start;
+                    const currentPercentage = Math.min(
+                        startValue.percentage + (progress / ANIMATION_DURATION) * (endValue.percentage - startValue.percentage),
+                        endValue.percentage
+                    );
+                    const currentTotal = Math.min(
+                        startValue.total + (progress / ANIMATION_DURATION) * (endValue.total - startValue.total),
+                        endValue.total
+                    );
 
-                setAnimatedValues((prevValues) => {
-                    const newValues = [...prevValues];
-                    newValues[index] = {
-                        percentage: currentPercentage,
-                        total: currentTotal
-                    };
-                    return newValues;
-                });
+                    setAnimatedValues((prevValues) => {
+                        const newValues = [...prevValues];
+                        newValues[index] = {
+                            percentage: currentPercentage,
+                            total: currentTotal
+                        };
+                        return newValues;
+                    });
 
-                if (progress < duration) {
-                    requestAnimationFrame(step);
-                }
-            };
+                    if (progress < ANIMATION_DURATION) {
+                        requestAnimationFrame(step);
+                    }
+                };
 
-            requestAnimationFrame(step);
-        });
-    }, [guessDistribution]);
+                requestAnimationFrame(step);
+            });
+        }
+    }, [guessDistribution, disableAnimations, ANIMATION_DURATION]);
 
     return (
         <Stack direction="vertical" className="guess-distribution">
@@ -67,6 +73,7 @@ const GuessDistribution = () => {
                         now={animatedValue.percentage}
                         label={`${animatedValue.percentage.toFixed(0)}%`}
                         className="guess-distribution__progress-bar"
+                        style={disableAnimations ? { transition: "none !important" } : {}}
                     />
                     <div className="guess-distribution__number">{Math.round(animatedValue.total)}</div>
                 </Stack>

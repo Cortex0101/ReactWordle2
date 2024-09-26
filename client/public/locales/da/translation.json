@@ -16,6 +16,10 @@
       "swapButtons": {
         "title": "Byt knapper",
         "description": "Byt om på knapperne"
+      }, 
+      "disableAnimations": {
+        "title": "Deaktiver animationer",
+        "description": "Deaktiver animationer for hurtigere spil"
       }
     },
     "statistics": {
