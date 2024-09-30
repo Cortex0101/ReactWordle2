@@ -5,6 +5,7 @@
     /* Keyboard */
     --keyboard-bg-color: #818384;
     --keyboard-color: #fff;
+    --keyboard-max-width: 500px;
 
     /* Board */
     --board-cell-border-color: #000;

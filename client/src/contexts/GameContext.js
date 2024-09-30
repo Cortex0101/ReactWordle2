@@ -7,7 +7,7 @@ const GameProvider = ({ children }) => {
     const keyboardLayout = [
         ['Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P', 'Å'],
         ['A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L', 'Æ', 'Ø'],
-        ['Enter', 'Z', 'X', 'C', 'V', 'B', 'N', 'M', 'Backspace']
+        ['Z', 'X', 'C', 'V', 'B', 'N', 'M', 'Enter', 'Backspace']
     ];
 
     const [guesses, setGuesses] = useState([

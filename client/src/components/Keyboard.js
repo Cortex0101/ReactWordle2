@@ -37,7 +37,7 @@ const Keyboard = () => {
                     <div key={i} className="keyboard-row">
                         {
                             row.map((letter, j) => (
-                                <button className={`keyboard-key ${letter.length > 1 ? 'special-key-size' : 'standard-key-size'}`}
+                                <button className={`keyboard-key ${letter.length > 1 ? (letter.toLowerCase() === 'backspace' ? 'backspace' : 'enter') : ''}`}
                                     key={j}
                                     onClick={() => {
                                         handleInput(letter);

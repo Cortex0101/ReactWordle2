@@ -8,4 +8,6 @@ html {
 
 .App {
     max-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
