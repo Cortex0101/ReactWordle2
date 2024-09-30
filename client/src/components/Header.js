@@ -28,7 +28,6 @@ const Header = () => {
             return (
                 <GoogleLogin
                     type='icon'
-                    theme="filled_black"
                     onSuccess={handleLoginSuccess}
                     onError={handleLogout}
                 >Log in</GoogleLogin>

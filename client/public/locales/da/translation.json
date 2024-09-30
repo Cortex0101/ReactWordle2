@@ -24,6 +24,9 @@
     },
     "statistics": {
       "title": "Statistikker",
+      "rating": {
+        "title": "Rating"
+      },
       "general-statistics": {
         "title": "Generelle statistikker",
         "gamesPlayed": {

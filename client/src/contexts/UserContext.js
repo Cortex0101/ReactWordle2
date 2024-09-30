@@ -1,161 +1,37 @@
-// React-related imports
-import React, { useState, useEffect, createContext } from 'react';
-
-// Third-party libraries or packages
-import { googleLogout } from '@react-oauth/google';
-import { jwtDecode } from "jwt-decode";
-import i18n from '../i18n'; // Import i18n to change language
-
+import React, { createContext } from 'react';
+import useUser from '../hooks/useUser';
+import useSettings from '../hooks/useSettings';
+import { defaultStatistics } from '../models/User';
 
 const UserContext = createContext();
 
 const UserProvider = ({ children }) => {
-    const [isAuthenticated, setIsAuthenticated] = useState(false);
-    const [user, setUser] = useState(null);
-    
-    // Add theme and language settings
-    const [theme, setTheme] = useState('light');
-    const [language, setLanguage] = useState('dk');
-    const [colorBlind, setColorBlind] = useState(false);
-    const [swappedButtons, setSwappedButtons] = useState(false);
-    const [disableAnimations, setDisableAnimations] = useState(true);
-    const ANIMATION_DURATION = 500;
-
-    const SUPPORTED_LANGUAGES = [
-        { code: 'dk', name: 'Dansk' },
-        { code: 'en', name: 'English' },
-        { code: 'de', name: 'Deutsch' },
-        { code: 'fr', name: 'Français' }
-    ];
-
-    const generalStatistics = {
-        gamesPlayed: 35,
-        winPercentage: 94,
-        averageGuesses: 5.32,
-        currentStreak: 4,
-        bestStreak: 32,
-        daysInRow: 7
-    };
-
-    const guessDistribution = [
-        { guessNr: 1, percentage: 0.25, total: 20 },
-        { guessNr: 2, percentage: 0.35, total: 28 },
-        { guessNr: 3, percentage: 0.20, total: 16 },
-        { guessNr: 4, percentage: 0.10, total: 8 },
-        { guessNr: 5, percentage: 0.05, total: 4 },
-        { guessNr: 6, percentage: 0.03, total: 2 },
-        { guessNr: 'F', percentage: 0.02, total: 1 }
-    ]
-
-    // Check for a logged-in user and settings in localStorage on app load
-    useEffect(() => {
-        const storedUser = localStorage.getItem('user');
-        const storedSettings = localStorage.getItem('settings');
-
-        if (storedUser) {
-            const parsedUser = JSON.parse(storedUser);
-            setUser(parsedUser);
-            setIsAuthenticated(true);
-        }
-
-        if (storedSettings) {
-            const parsedSettings = JSON.parse(storedSettings);
-            setTheme(parsedSettings.theme || 'dark');
-            setLanguage(parsedSettings.language || 'dk');
-            setColorBlind(parsedSettings.colorBlind || false);
-            setSwappedButtons(parsedSettings.swappedButtons || false);
-            setDisableAnimations(parsedSettings.disableAnimations || false);
-        }
-
-        // Set the theme on the document element
-        document.documentElement.setAttribute('data-bs-theme', theme);
-        document.documentElement.setAttribute('color-blind', colorBlind);
-    }, [theme, colorBlind]);
-
-    // Handle successful login and save user & settings
-    const handleLoginSuccess = (response) => {
-        const decoded = jwtDecode(response.credential);
-        setUser(decoded);
-        setIsAuthenticated(true);
-        localStorage.setItem('user', JSON.stringify(decoded)); // Save user info in localStorage
-
-        // Save the current settings in localStorage as well
-        localStorage.setItem('settings', JSON.stringify({ theme, language, colorBlind, swappedButtons }));
-    };
-
-    // Handle logout
-    const handleLogout = () => {
-        googleLogout();
-        setUser(null);
-        setIsAuthenticated(false);
-        localStorage.removeItem('user'); // Clear user info from localStorage
-        localStorage.removeItem('settings'); // Remove settings as well
-    };
-
-    // Theme toggle function
-    const toggleTheme = () => {
-        const newTheme = theme === 'light' ? 'dark' : 'light';
-        setTheme(newTheme);
-        document.documentElement.setAttribute('data-bs-theme', newTheme);
-
-        // Save the updated theme in localStorage
-        localStorage.setItem('settings', JSON.stringify({ theme: newTheme, language, colorBlind, swappedButtons }));
-    };
-
-    // Language change function
-    const changeLanguage = (lng) => {
-        setLanguage(lng);
-        i18n.changeLanguage(lng);  // This updates the language for i18next
-        localStorage.setItem('settings', JSON.stringify({ theme, language: lng, colorBlind, swappedButtons }));
-    };
-
-    // Toggle color-blind mode
-    const toggleColorBlind = () => {
-        const newColorBlind = !colorBlind;
-        setColorBlind(newColorBlind);
-        document.documentElement.setAttribute('color-blind', newColorBlind);
-
-        // Save the updated color-blind mode in localStorage
-        localStorage.setItem('settings', JSON.stringify({ theme, language, colorBlind: newColorBlind, swappedButtons }));
-    };
-
-    // Toggle swapped buttons
-    const toggleSwappedButtons = () => {
-        const newSwappedButtons = !swappedButtons;
-        setSwappedButtons(newSwappedButtons);
-        document.documentElement.setAttribute('swapped-buttons', newSwappedButtons);
-
-        // Save the updated swapped buttons in localStorage
-        localStorage.setItem('settings', JSON.stringify({ theme, language, colorBlind, swappedButtons: newSwappedButtons }));
-    }
-
-    const toggleDisableAnimations = () => {
-        setDisableAnimations(!disableAnimations);
-
-        // Save the updated disableAnimations in localStorage
-        localStorage.setItem('settings', JSON.stringify({ theme, language, colorBlind, swappedButtons, disableAnimations: !disableAnimations }));
-    }
+    const { userState, handleLoginSuccess, handleLogout } = useUser();
+    const {
+        settings,
+        toggleTheme,
+        changeLanguage,
+        toggleColorBlind,
+        toggleSwappedButtons,
+        toggleDisableAnimations,
+        SUPPORTED_LANGUAGES,
+        ANIMATION_DURATION,
+    } = useSettings();
 
     return (
         <UserContext.Provider value={{
-            isAuthenticated,
-            user,
+            ...userState,
             handleLoginSuccess,
             handleLogout,
-            theme,
+            ...settings,
             toggleTheme,
-            language,
             changeLanguage,
-            colorBlind,
             toggleColorBlind,
-            swappedButtons,
             toggleSwappedButtons,
-            disableAnimations,
             toggleDisableAnimations,
-            ANIMATION_DURATION,
             SUPPORTED_LANGUAGES,
-            generalStatistics,
-            guessDistribution
+            ANIMATION_DURATION,
+            generalStatistics: defaultStatistics,
         }}>
             {children}
         </UserContext.Provider>

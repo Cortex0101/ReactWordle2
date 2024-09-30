@@ -12,7 +12,7 @@
 .guess-distribution__progress-bar {
     min-height: 28px;
     margin: 0 1rem 0 0;
-    flex-grow: 1
+    flex-grow: 1;
 }
 
 .guess-distribution__label {

@@ -1,5 +1,7 @@
 /* Define base variables (light mode as the default) */
 :root {
+    --tertairy-color: rgb(43, 48, 53);
+
     /* Keyboard */
     --keyboard-bg-color: #818384;
     --keyboard-color: #fff;
@@ -21,6 +23,8 @@
 
 /* Dark theme */
 html[data-bs-theme="dark"] {
+    --tertairy-color: rgb(43, 48, 53);
+
     /* Keyboard */
     --keyboard-bg-color: #949494;
     --keyboard-color: #fff;

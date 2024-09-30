@@ -15,7 +15,7 @@ i18n
       escapeValue: false, // React already escapes values
     },
     backend: {
-      loadPath: '/locales/{{lng}}/translation.json', // Dynamic loading based on language
+      loadPath: 'http://localhost:3000/locales/{{lng}}/translation.json', // Dynamic loading based on language
     },
     detection: {
       order: ['querystring', 'cookie', 'localStorage', 'navigator', 'htmlTag'], // Language detection order

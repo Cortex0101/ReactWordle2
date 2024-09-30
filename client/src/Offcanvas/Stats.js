@@ -10,6 +10,7 @@ import { MenuContext } from "../contexts/MenuContext";
 
 import StatisticsGrid from "../components/StatisticsGrid";
 import GuessDistribution from "../components/GuessDistribution";
+import RatingSlider from "../components/RatingSlider";
 
 const Stats = () => {
     const { t } = useTranslation();
@@ -22,6 +23,8 @@ const Stats = () => {
           <Offcanvas.Title>{t('modals.statistics.title')}</Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body>
+          <h3 className="text-center">{t('modals.statistics.rating.title')}</h3>
+          <RatingSlider rating={85} />
           <h3 className="text-center">{t('modals.statistics.general-statistics.title')}</h3>
           <StatisticsGrid />
           <h3 className="text-center">{t('modals.statistics.guess-distribution.title')}</h3>
