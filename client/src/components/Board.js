@@ -37,6 +37,37 @@ const BoardCell = ({ letter, rowIndex, colIndex, active }) => {
 const Board = ({ wordLength, maxGuesses }) => {
 	const { guesses, currentRow, currentCol } = useContext(GameContext);
 
+	useEffect(() => {
+		/* 
+		Detect resize event and adjust board size such that it takes up
+		the width that makes it height equal to the remaining height
+		*/
+		const resizeObserver = new ResizeObserver((entries) => {
+			const boardContainer = entries[0];
+
+			const board = document.querySelector('.board');
+
+			if (boardContainer && board) {
+				board.classList.remove('small-phone-board');
+
+				const boardContainerHeight = boardContainer.contentRect.height;
+				const boardHeight = board.offsetHeight;
+
+				console.log(boardContainerHeight, boardHeight);
+
+				if (boardContainerHeight < boardHeight) {
+					board.classList.add('small-phone-board');
+				} 
+			}
+		});
+
+		const boardContainer = document.querySelector('.board-container');
+		resizeObserver.observe(boardContainer);
+
+		return () => resizeObserver.disconnect();
+
+	}, [maxGuesses]);
+
 	return (
 		<div className="board-container">
 			<Container className="board">

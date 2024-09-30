@@ -19,6 +19,7 @@
     --header-height: 70px;
     --keyboard-height: 200px;
     --extra-space: 20px;
+    --small-phone-board-width: 300px;
 }
 
 /* Dark theme */
@@ -30,11 +31,9 @@ html[data-bs-theme="dark"] {
     --keyboard-color: #fff;
 
     /* Board */
-    --board-cell-border-color: #fff;
-
+    --board-cell-border-color: #3a3a3c;
     --board-cell-text-color: #fff;
-
-    --board-cell-selected-color: #48484b;
+    --board-cell-selected-color: #888;
 }
 
 /* Color-blind mode (light theme) */

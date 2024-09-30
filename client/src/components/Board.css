@@ -1,4 +1,5 @@
 .board-container {
+    max-height: calc(100vh - var(--header-height) - var(--keyboard-height) - var(--extra-space));
     height: calc(100vh - var(--header-height) - var(--keyboard-height) - var(--extra-space));
     display: flex;
     justify-content: center;
@@ -9,10 +10,14 @@
     max-width: var(--board-max-width) !important;
 }
 
+.small-phone-board {
+    max-width: var(--small-phone-board-width) !important;
+}
+
 .board-cell {
     border: 1px solid var(--board-cell-border-color);
     border-radius: 5%;
-    aspect-ratio: 1/1;
+    aspect-ratio: 1/1 !important;
 }
 
 @keyframes bubble {

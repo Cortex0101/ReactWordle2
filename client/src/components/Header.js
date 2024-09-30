@@ -50,7 +50,7 @@ const Header = () => {
                         </ButtonGroup>
                     </Navbar.Text>
 
-                    {renderSignInButton()}
+                    {/*renderSignInButton()*/}
 
                 </Navbar.Collapse>
             </Container>
