@@ -38,10 +38,6 @@ const Board = ({ wordLength, maxGuesses }) => {
 	const { guesses, currentRow, currentCol } = useContext(GameContext);
 
 	useEffect(() => {
-		/* 
-		Detect resize event and adjust board size such that it takes up
-		the width that makes it height equal to the remaining height
-		*/
 		const resizeObserver = new ResizeObserver((entries) => {
 			const boardContainer = entries[0];
 
