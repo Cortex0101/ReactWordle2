@@ -24,6 +24,14 @@
     },
     "statistics": {
       "title": "Statistikker",
+      "tabs": {
+        "personal": {
+          "title": "Personlig"
+        },
+        "global": {
+          "title": "Globale"
+        }
+      },
       "rating": {
         "title": "Rating"
       },

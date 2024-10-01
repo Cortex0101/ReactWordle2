@@ -5,6 +5,7 @@
     touch-action: manipulation;
     margin: 0 auto;
     width: 100%;
+    max-width: 500px;
     /* align bottom of flex column */
     margin-top: auto;
 }
