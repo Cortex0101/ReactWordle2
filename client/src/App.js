@@ -1,5 +1,5 @@
 // 1. React-related imports
-import React, { useContext } from 'react';
+import React, { useContext, Suspense } from 'react';
 
 // 2. Third-party libraries or packages
 import { GoogleOAuthProvider } from '@react-oauth/google'
@@ -15,15 +15,15 @@ import Header from './components/Header';
 import Board from './components/Board';
 import Keyboardd from './components/Keyboard';
 
-// 5. Internal off-canvas components
-import Stats from './Offcanvas/Stats';
-import Settings from './Offcanvas/Settings';
-import Help from './Offcanvas/Help';
-import SideNavBar from './Offcanvas/SideNavBar';
-
-// 6. Internal styles
+// 5. Internal styles
 import './App.css'; 
 import './Theme.css';
+
+// 6. Internal off-canvas components (lazy-loaded)
+const LazyStats = React.lazy(() => import('./Offcanvas/Stats')); // Lazy load Stats
+const LazySettings = React.lazy(() => import('./Offcanvas/Settings'));
+const LazyHelp = React.lazy(() => import('./Offcanvas/Help'));
+const LazySideNavBar = React.lazy(() => import('./Offcanvas/SideNavBar'));
 
 function App() {
   return (
@@ -32,15 +32,26 @@ function App() {
         <UserProvider>
           <MenuProvider>
             <Header />
-            <Stats />
-            <Settings />
-            <Help />
-            <SideNavBar />
+
+            {/* Use Suspense to lazy load the Stats, Settings, Help, and SideNavBar components */}
+            <Suspense fallback={<div>Loading Stats...</div>}>
+              <LazyStats />
+            </Suspense>
+            <Suspense fallback={<div>Loading Settings...</div>}>
+              <LazySettings />
+            </Suspense>
+            <Suspense fallback={<div>Loading Help...</div>}>
+              <LazyHelp />
+            </Suspense>
+            <Suspense fallback={<div>Loading SideNavBar...</div>}>
+              <LazySideNavBar />
+            </Suspense>
           </MenuProvider>
+
           <GameProvider>
             <Board wordLength={5} maxGuesses={6} />
             <Keyboardd />
-          </GameProvider>          
+          </GameProvider>
         </UserProvider>
       </GoogleOAuthProvider>
     </div>
