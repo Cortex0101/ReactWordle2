@@ -14,7 +14,7 @@ import IconButton from "./IconButton";
 const Header = () => {
     const { t } = useTranslation();
 
-    const { toggleStatsOpen, toggleSettingsOpen, toggleHelpOpen, toggleSideNavBarOpen } = useContext(MenuContext);
+    const { toggleStatsOpen, toggleSettingsOpen, toggleHelpOpen, toggleSideNavBarOpen, toggleLoginOpen } = useContext(MenuContext);
     const { isAuthenticated, handleLoginSuccess, handleLogout } = useContext(UserContext);
 
     const renderSignInButton = () => {
@@ -56,7 +56,7 @@ const Header = () => {
                             <IconButton icon="bar-chart" variant="secondary" handleClick={toggleStatsOpen} />
                             <IconButton icon="gear" variant="secondary" handleClick={toggleSettingsOpen} />
                             <IconButton icon="list" variant="secondary" handleClick={toggleSideNavBarOpen} />
-                            <IconButton icon="person-circle" variant="secondary" handleClick={toggleSideNavBarOpen} />
+                            <IconButton icon="person-circle" variant="secondary" handleClick={toggleLoginOpen} />
                         </ButtonGroup>
                     </Navbar.Text>
 

@@ -24,6 +24,7 @@ const LazyStats = React.lazy(() => import('./Offcanvas/Stats')); // Lazy load St
 const LazySettings = React.lazy(() => import('./Offcanvas/Settings'));
 const LazyHelp = React.lazy(() => import('./Offcanvas/Help'));
 const LazySideNavBar = React.lazy(() => import('./Offcanvas/SideNavBar'));
+const LazyLogin = React.lazy(() => import('./Offcanvas/Login'));
 
 function App() {
   return (
@@ -45,32 +46,39 @@ function App() {
 }
 
 const MenuContent = () => {
-  const { statsOpen, settingsOpen, helpOpen, sideNavBarOpen } = React.useContext(MenuContext);
+  const { statsOpen, settingsOpen, helpOpen, sideNavBarOpen, loginOpen } = React.useContext(MenuContext);
 
   return (
     <>
       {/* Use Suspense to lazy load the Stats, Settings, Help, and SideNavBar components */}
       {statsOpen && (
-        <Suspense fallback={<div>Loading Stats...</div>}>
+        <Suspense fallback={null}>
           <LazyStats />
         </Suspense>
       )}
 
       {settingsOpen && (
-        <Suspense fallback={<div>Loading Settings...</div>}>
+        <Suspense fallback={null}>
           <LazySettings />
         </Suspense>
       )}
 
       {helpOpen && (
-        <Suspense fallback={<div>Loading Help...</div>}>
+        <Suspense fallback={null}>
           <LazyHelp />
         </Suspense>
       )}
 
       {sideNavBarOpen && (
-        <Suspense fallback={<div>Loading SideNavBar...</div>}>
+        <Suspense fallback={null}>
           <LazySideNavBar />
+        </Suspense>
+      )}
+
+      {/* Login */}
+      {loginOpen && (
+        <Suspense fallback={null}>
+          <LazyLogin />
         </Suspense>
       )}
     </>
