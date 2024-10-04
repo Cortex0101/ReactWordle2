@@ -16,6 +16,9 @@
 
     --board-cell-selected-color: #48484b;
 
+    /* Sign in / up */
+    --sign-in-divider-color: #000;
+
     /* Layout */ 
     --header-height: 70px;
     --keyboard-height: 200px;
@@ -35,6 +38,9 @@ html[data-bs-theme="dark"] {
     --board-cell-border-color: #3a3a3c;
     --board-cell-text-color: #fff;
     --board-cell-selected-color: #888;
+
+    /* Sign in / up */
+    --sign-in-divider-color: #eee;
 }
 
 /* Color-blind mode (light theme) */

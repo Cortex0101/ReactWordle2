@@ -101,6 +101,35 @@
           }
         }
       }
+    },
+    "login": {
+      "tabs": {
+        "login": {
+          "title": "Log ind",
+          "tab-title": "Log ind",
+          "forms": {
+            "email": {
+              "label": "Email",
+              "placeholder": "Indtast email"
+            },
+            "password": {
+              "label": "Adgangskode",
+              "placeholder": "Indtast adgangskode"
+            }
+          },
+          "buttons": {
+            "login": "Log ind",
+            "forgot-password": "Glemt adgangskode?",
+            "continue-with": "Fortsæt med ",
+            "remember-me": "Husk mig"
+          },
+          "divider-text": "eller"
+        },
+        "sign-up": {
+          "title": "Registrer",
+          "tab-title": "Registrer"
+        }
+      }
     }
   }
 }
