@@ -7,7 +7,7 @@ import './i18n';
 
 // 3. Internal context providers (like global app contexts)
 import { GameProvider } from './contexts/GameContext';
-import { MenuProvider } from './contexts/MenuContext';
+import { MenuProvider, MenuContext } from './contexts/MenuContext';
 import { UserProvider } from './contexts/UserContext';
 
 // 4. Internal components (application-specific components)
@@ -32,22 +32,8 @@ function App() {
         <UserProvider>
           <MenuProvider>
             <Header />
-
-            {/* Use Suspense to lazy load the Stats, Settings, Help, and SideNavBar components */}
-            <Suspense fallback={<div>Loading Stats...</div>}>
-              <LazyStats />
-            </Suspense>
-            <Suspense fallback={<div>Loading Settings...</div>}>
-              <LazySettings />
-            </Suspense>
-            <Suspense fallback={<div>Loading Help...</div>}>
-              <LazyHelp />
-            </Suspense>
-            <Suspense fallback={<div>Loading SideNavBar...</div>}>
-              <LazySideNavBar />
-            </Suspense>
+            <MenuContent />
           </MenuProvider>
-
           <GameProvider>
             <Board wordLength={5} maxGuesses={6} />
             <Keyboardd />
@@ -57,5 +43,38 @@ function App() {
     </div>
   );
 }
+
+const MenuContent = () => {
+  const { statsOpen, settingsOpen, helpOpen, sideNavBarOpen } = React.useContext(MenuContext);
+
+  return (
+    <>
+      {/* Use Suspense to lazy load the Stats, Settings, Help, and SideNavBar components */}
+      {statsOpen && (
+        <Suspense fallback={<div>Loading Stats...</div>}>
+          <LazyStats />
+        </Suspense>
+      )}
+
+      {settingsOpen && (
+        <Suspense fallback={<div>Loading Settings...</div>}>
+          <LazySettings />
+        </Suspense>
+      )}
+
+      {helpOpen && (
+        <Suspense fallback={<div>Loading Help...</div>}>
+          <LazyHelp />
+        </Suspense>
+      )}
+
+      {sideNavBarOpen && (
+        <Suspense fallback={<div>Loading SideNavBar...</div>}>
+          <LazySideNavBar />
+        </Suspense>
+      )}
+    </>
+  );
+};
 
 export default App;

@@ -617,6 +617,7 @@ app.use(cors({
 
 // Serve locales (translations) from "client/public/locales"
 app.use('/locales', express.static(path.join(__dirname, '../../client/public/locales')));
+app.use('/icons', express.static(path.join(__dirname, '../../client/public/icons')));
 
 // Serve static files from "client/dist"
 app.use(express.static(path.join(__dirname, '../../client/dist')));

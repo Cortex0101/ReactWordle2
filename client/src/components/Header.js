@@ -52,11 +52,11 @@ const Header = () => {
                 <Navbar.Collapse className="justify-content-end">
                     <Navbar.Text>
                         <ButtonGroup aria-label="Modal buttons">
-                            <IconButton icon="bi bi-question-circle" variant="secondary" handleClick={toggleHelpOpen} />
-                            <IconButton icon="bi bi-bar-chart" variant="secondary" handleClick={toggleStatsOpen} />
-                            <IconButton icon="bi bi-gear" variant="secondary" handleClick={toggleSettingsOpen} />
-                            <IconButton icon="bi bi-list" variant="secondary" handleClick={toggleSideNavBarOpen} />
-                            <IconButton icon="bi bi-person-circle" variant="secondary" handleClick={toggleSideNavBarOpen} />
+                            <IconButton icon="question-circle" variant="secondary" handleClick={toggleHelpOpen} />
+                            <IconButton icon="bar-chart" variant="secondary" handleClick={toggleStatsOpen} />
+                            <IconButton icon="gear" variant="secondary" handleClick={toggleSettingsOpen} />
+                            <IconButton icon="list" variant="secondary" handleClick={toggleSideNavBarOpen} />
+                            <IconButton icon="person-circle" variant="secondary" handleClick={toggleSideNavBarOpen} />
                         </ButtonGroup>
                     </Navbar.Text>
 

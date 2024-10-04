@@ -7,8 +7,6 @@ import { GameContext } from "../contexts/GameContext";
 // Internal styles
 import "./Keyboard.css";
 
-import 'bootstrap-icons/font/bootstrap-icons.css';
-
 const Keyboard = () => {
     const { keyboardLayout, handleInput } = useContext(GameContext);
 
