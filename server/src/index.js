@@ -1,6 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const path = require('path');
+const {compress, decompress} = require("express-compress");
 /* text compression */
 //const compression = require('compression');
 const app = express();
@@ -613,7 +614,7 @@ app.use(cors({
 }));
 
 // Use compression middleware to compress responses
-//app.use(compression());
+app.use(compress());
 
 // Serve locales (translations) from "client/public/locales"
 app.use('/locales', express.static(path.join(__dirname, '../../client/public/locales')));

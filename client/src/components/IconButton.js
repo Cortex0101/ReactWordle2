@@ -1,26 +1,25 @@
 import React from "react";
 import './IconButton.css';
 
-// Import individual SVG icons
-import questionCircle from '../icons/question-circle.svg';
-import barChart from '../icons/bar-chart.svg';
-import gear from '../icons/gear.svg';
-import list from '../icons/list.svg';
-import personCircle from '../icons/person-circle.svg';
+import { BiHelpCircle } from "react-icons/bi";
+import { FaChartBar } from "react-icons/fa";
+import { CiSettings } from "react-icons/ci";
+import { FaList } from "react-icons/fa";
+import { IoPersonCircleOutline } from "react-icons/io5";
 
 const IconButton = ({ icon, variant, handleClick }) => {
   const renderIcon = () => {
     switch (icon) {
       case 'question-circle':
-        return <img src={questionCircle} alt="Question Circle" className="icon-img" width={16} height={16} />;
+        return <BiHelpCircle />;
       case 'bar-chart':
-        return <img src={barChart} alt="Bar Chart" className="icon-img" width={16} height={16} />;
+        return <FaChartBar />;
       case 'gear':
-        return <img src={gear} alt="Gear" className="icon-img" width={16} height={16} />;
+        return <CiSettings />;
       case 'list':
-        return <img src={list} alt="List" className="icon-img" width={16} height={16} />;
+        return <FaList />;
       case 'person-circle':
-        return <img src={personCircle} alt="Person Circle" className="icon-img" width={16} height={16} />;
+        return <IoPersonCircleOutline />;
       default:
         return null;
     }
