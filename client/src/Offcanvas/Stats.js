@@ -7,10 +7,12 @@ import { useTranslation } from "react-i18next";
 
 // Internal context providers (like global app contexts)
 import { MenuContext } from "../contexts/MenuContext";
+import { UserContext } from "../contexts/UserContext";
 
 import StatisticsGrid from "../components/StatisticsGrid";
 import GuessDistribution from "../components/GuessDistribution";
 import RatingSlider from "../components/RatingSlider";
+import SignedInBanner from "../components/SignedInBanner";
 
 const PersonalStats = () => {
   const { t } = useTranslation();
@@ -21,6 +23,7 @@ const PersonalStats = () => {
 
   return (
     <>
+      <SignedInBanner fullName="John Smith" userName={"Cortex0101"} joinedDate="2021-01-01" imageURL="https://lh3.googleusercontent.com/a/ACg8ocI2kmPBsLxmg6HbgMAilpWk9Ieg-2KIxVNwlkz2MM55Xk526A=s96-c" />
       <h3 className="text-center" onClick={() => setOpen1(!open1)}>{t('modals.statistics.rating.title')}</h3>
       <Collapse in={open1}>
         <div>
@@ -122,6 +125,7 @@ const Stats = () => {
   const { t } = useTranslation();
 
   const { toggleStatsOpen, statsOpen } = useContext(MenuContext);
+  const { user } = useContext(UserContext);
 
   return (
     <Offcanvas show={statsOpen} onHide={toggleStatsOpen} placement='bottom' className='h-100'>
