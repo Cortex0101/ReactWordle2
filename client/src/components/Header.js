@@ -15,22 +15,16 @@ const Header = () => {
     const { t } = useTranslation();
 
     const { toggleStatsOpen, toggleSettingsOpen, toggleHelpOpen, toggleSideNavBarOpen, toggleLoginOpen } = useContext(MenuContext);
-    const { isAuthenticated, handleLoginSuccess, handleLogout } = useContext(UserContext);
+    const { isAuthenticated, user } = useContext(UserContext);
 
     const renderSignInButton = () => {
         if (isAuthenticated) {
             return (
-                <Button variant="secondary" onClick={handleLogout}>
-                    Log af
-                </Button>
+                <IconButton icon={user.picture} variant="secondary" handleClick={toggleLoginOpen} />
             )
         } else {
             return (
-                <GoogleLogin
-                    type='icon'
-                    onSuccess={handleLoginSuccess}
-                    onError={handleLogout}
-                >Log in</GoogleLogin>
+                <IconButton icon="person-circle" variant="secondary" handleClick={toggleLoginOpen} />
             )
         }
     }
@@ -56,7 +50,7 @@ const Header = () => {
                             <IconButton icon="bar-chart" variant="secondary" handleClick={toggleStatsOpen} />
                             <IconButton icon="gear" variant="secondary" handleClick={toggleSettingsOpen} />
                             <IconButton icon="list" variant="secondary" handleClick={toggleSideNavBarOpen} />
-                            <IconButton icon="person-circle" variant="secondary" handleClick={toggleLoginOpen} />
+                            {renderSignInButton()}
                         </ButtonGroup>
                     </Navbar.Text>
 

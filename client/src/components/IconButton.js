@@ -1,6 +1,8 @@
 import React from "react";
 import './IconButton.css';
 
+import { Image } from "react-bootstrap";
+
 import { BiHelpCircle } from "react-icons/bi";
 import { FaChartBar } from "react-icons/fa";
 import { CiSettings } from "react-icons/ci";
@@ -21,7 +23,7 @@ const IconButton = ({ icon, variant, handleClick }) => {
       case 'person-circle':
         return <IoPersonCircleOutline />;
       default:
-        return null;
+        return <Image src={icon} width={20} height={20} roundedCircle />;
     }
   };
 
