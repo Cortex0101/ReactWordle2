@@ -121,7 +121,8 @@
             "login": "Log ind",
             "forgot-password": "Glemt adgangskode?",
             "continue-with": "Fortsæt med ",
-            "remember-me": "Husk mig"
+            "remember-me": "Husk mig",
+            "logout": "Log ud"
           },
           "divider-text": "eller"
         },
