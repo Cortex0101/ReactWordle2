@@ -23,7 +23,7 @@ const PersonalStats = () => {
 
   return (
     <>
-      <SignedInBanner fullName="John Smith" userName={"Cortex0101"} joinedDate="2021-01-01" imageURL="https://lh3.googleusercontent.com/a/ACg8ocI2kmPBsLxmg6HbgMAilpWk9Ieg-2KIxVNwlkz2MM55Xk526A=s96-c" />
+      <SignedInBanner fullName="Lucas Eiruff" userName={"Cortex0101"} joinedDate="05-10-2024" imageURL="https://lh3.googleusercontent.com/a/ACg8ocI2kmPBsLxmg6HbgMAilpWk9Ieg-2KIxVNwlkz2MM55Xk526A=s96-c" />
       <h3 className="text-center" onClick={() => setOpen1(!open1)}>{t('modals.statistics.rating.title')}</h3>
       <Collapse in={open1}>
         <div>

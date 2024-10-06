@@ -92,6 +92,10 @@ const LoginTab = ({ handleLoginSuccess }) => {
                     <GoogleLogin
                         onSuccess={(response) => handleLoginSuccess(response)}
                         onFailure={(response) => console.log(response)}
+                        theme="filled_black"
+                        shape="pill"
+                        size="medium"
+                        width="335px"
                     />
                 </Col>
             </Row>

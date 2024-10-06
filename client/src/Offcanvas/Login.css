@@ -16,3 +16,7 @@
     height: 1px;
     background: var(--sign-in-divider-color);
 }
+
+.qJTHM {
+    background-color: rgb(33, 37, 41) !important;
+}
