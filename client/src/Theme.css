@@ -16,6 +16,10 @@
 
     --board-cell-selected-color: #48484b;
 
+    --correct-color: #538d4e;
+    --incorrect-color: #ff0000;
+    --misplaced-color: #b59f3b;
+
     /* Sign in / up */
     --sign-in-divider-color: #000;
 
@@ -38,6 +42,10 @@ html[data-bs-theme="dark"] {
     --board-cell-border-color: #3a3a3c;
     --board-cell-text-color: #fff;
     --board-cell-selected-color: #888;
+
+    --correct-color: #538d4e;
+    --incorrect-color: #3a3a3c;
+    --misplaced-color: #b59f3b;
 
     /* Sign in / up */
     --sign-in-divider-color: #eee;

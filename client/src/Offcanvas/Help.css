@@ -1,18 +1,32 @@
-/*
 .board-cell {
     border: 1px solid var(--board-cell-border-color);
     border-radius: 5%;
     aspect-ratio: 1/1;
+    width: 19%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .board-cell__content {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1rem;
+    font-size: 2rem;
     font-weight: bold;
     color: var(--board-cell-text-color);
-    width: 100%;
-    height: 100%;
+    line-height: 0;
 }
-    */
+
+.correct {
+    background-color: var(--correct-color);
+}
+
+.incorrect {
+    background-color: var(--incorrect-color);
+}
+
+.misplaced {
+    background-color: var(--misplaced-color);
+}

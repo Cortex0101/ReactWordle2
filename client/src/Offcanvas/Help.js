@@ -35,35 +35,35 @@ const Help = () => {
         <Container>
           <Row>
             <Col xs={6} md={3}>
-              <Row>
-                <Col className="board-cell">
-                  <div className={`board-cell__content`}>
+              <Row className="board-row mb-2 mx-1">
+                <div className={`board-cell correct`}>
+                  <div className="board-cell__content">
                     S
                   </div>
-                </Col>
-                <Col className="board-cell">
-                  <div className={`board-cell__content`}>
-                    S
+                </div>
+                <div className={`board-cell incorrect`}>
+                  <div className="board-cell__content">
+                    A
                   </div>
-                </Col>
-                <Col className="board-cell">
-                  <div className={`board-cell__content`}>
-                    S
+                </div>
+                <div className={`board-cell incorrect`}>
+                  <div className="board-cell__content">
+                    R
                   </div>
-                </Col>
-                <Col className="board-cell">
-                  <div className={`board-cell__content`}>
-                    S
+                </div>
+                <div className={`board-cell incorrect`}>
+                  <div className="board-cell__content">
+                    T
                   </div>
-                </Col>
-                <Col className="board-cell">
-                  <div className={`board-cell__content`}>
-                    S
+                </div>
+                <div className={`board-cell incorrect`}>
+                  <div className="board-cell__content">
+                    E
                   </div>
-                </Col>
+                </div>
               </Row>
               <Row>
-                DOWN
+                <p className="text-muted">S er med i ordet og på den rigtige plads.</p>
               </Row>
             </Col>
             <Col xs={6} md={3}>
