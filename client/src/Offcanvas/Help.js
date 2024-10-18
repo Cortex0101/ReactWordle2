@@ -32,48 +32,135 @@ const Help = () => {
 
         <h3>{t('modals.help.content.examples.title')}</h3>
 
-        <Container>
+        <Container className="example-board">
           <Row>
-            <Col xs={6} md={3}>
-              <Row className="board-row mb-2 mx-1">
-                <div className={`board-cell correct`}>
+            <Col xs={6} /*md={3}*/>
+            <Row className="board-row mb-2 mx-0">
+                <Col className={`board-cell correct`}>
                   <div className="board-cell__content">
                     S
                   </div>
-                </div>
-                <div className={`board-cell incorrect`}>
+                </Col>
+                <Col className={`board-cell incorrect`}>
                   <div className="board-cell__content">
                     A
                   </div>
-                </div>
-                <div className={`board-cell incorrect`}>
+                </Col>
+                <Col className={`board-cell incorrect`}>
                   <div className="board-cell__content">
                     R
                   </div>
-                </div>
-                <div className={`board-cell incorrect`}>
+                </Col>
+                <Col className={`board-cell incorrect`}>
                   <div className="board-cell__content">
                     T
                   </div>
-                </div>
-                <div className={`board-cell incorrect`}>
+                </Col>
+                <Col className={`board-cell incorrect`}>
                   <div className="board-cell__content">
                     E
                   </div>
-                </div>
+                </Col>
               </Row>
               <Row>
                 <p className="text-muted">S er med i ordet og på den rigtige plads.</p>
               </Row>
             </Col>
-            <Col xs={6} md={3}>
-              <p>test</p>
+            <Col xs={6} /*md={3}*/>
+            <Row className="board-row mb-2 mx-0">
+                <Col className={`board-cell correct`}>
+                  <div className="board-cell__content">
+                    S
+                  </div>
+                </Col>
+                <Col className={`board-cell incorrect`}>
+                  <div className="board-cell__content">
+                    A
+                  </div>
+                </Col>
+                <Col className={`board-cell incorrect`}>
+                  <div className="board-cell__content">
+                    R
+                  </div>
+                </Col>
+                <Col className={`board-cell incorrect`}>
+                  <div className="board-cell__content">
+                    T
+                  </div>
+                </Col>
+                <Col className={`board-cell incorrect`}>
+                  <div className="board-cell__content">
+                    E
+                  </div>
+                </Col>
+              </Row>
+              <Row>
+                <p className="text-muted">S er med i ordet og på den rigtige plads.</p>
+              </Row>
             </Col>
-            <Col xs={6} md={3}>
-              test
+            <Col xs={6} /*md={3}*/>
+            <Row className="board-row mb-2 mx-0">
+                <Col className={`board-cell correct`}>
+                  <div className="board-cell__content">
+                    S
+                  </div>
+                </Col>
+                <Col className={`board-cell incorrect`}>
+                  <div className="board-cell__content">
+                    A
+                  </div>
+                </Col>
+                <Col className={`board-cell incorrect`}>
+                  <div className="board-cell__content">
+                    R
+                  </div>
+                </Col>
+                <Col className={`board-cell incorrect`}>
+                  <div className="board-cell__content">
+                    T
+                  </div>
+                </Col>
+                <Col className={`board-cell incorrect`}>
+                  <div className="board-cell__content">
+                    E
+                  </div>
+                </Col>
+              </Row>
+              <Row>
+                <p className="text-muted">S er med i ordet og på den rigtige plads.</p>
+              </Row>
             </Col>
-            <Col xs={6} md={3}>
-              test
+            <Col xs={6} /*md={3}*/>
+            <Row className="board-row mb-2 mx-0">
+                <Col className={`board-cell correct`}>
+                  <div className="board-cell__content">
+                    S
+                  </div>
+                </Col>
+                <Col className={`board-cell incorrect`}>
+                  <div className="board-cell__content">
+                    A
+                  </div>
+                </Col>
+                <Col className={`board-cell incorrect`}>
+                  <div className="board-cell__content">
+                    R
+                  </div>
+                </Col>
+                <Col className={`board-cell incorrect`}>
+                  <div className="board-cell__content">
+                    T
+                  </div>
+                </Col>
+                <Col className={`board-cell incorrect`}>
+                  <div className="board-cell__content">
+                    E
+                  </div>
+                </Col>
+              </Row>
+              <Row>
+                <p className="text-muted">S er med i ordet og på den rigtige plads.</p>
+              </Row>
             </Col>
           </Row>
         </Container>

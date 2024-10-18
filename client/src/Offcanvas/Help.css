@@ -1,22 +1,24 @@
-.board-cell {
+.example-board .board-cell {
     border: 1px solid var(--board-cell-border-color);
     border-radius: 5%;
+    box-sizing: border-box;
     aspect-ratio: 1/1;
-    width: 19%;
+    width: 15%;
     margin: 0 auto;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.board-cell__content {
+.example-board .board-cell__content {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 2rem;
+    font-size: 0.5rem;
     font-weight: bold;
     color: var(--board-cell-text-color);
     line-height: 0;
+    width: 100%;
 }
 
 .correct {
