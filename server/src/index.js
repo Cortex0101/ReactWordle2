@@ -3,7 +3,8 @@ const cors = require('cors');
 const path = require('path');
 const { compress, decompress } = require("express-compress");
 
-const { pool } = require('./database/db');
+require('dotenv').config();
+
 
 const app = express();
 
@@ -18,9 +19,19 @@ app.use(compress());
 // Serve locales (translations) from "client/public/locales"
 app.use('/locales', express.static(path.join(__dirname, '../../client/public/locales')));
 app.use('/icons', express.static(path.join(__dirname, '../../client/public/icons')));
-
-// Serve static files from "client/dist"
 app.use(express.static(path.join(__dirname, '../../client/dist')));
+
+// API Routes
+const usersRoutes = require('./routes/api/users');
+const authRoutes = require('./routes/api/auth');
+
+app.use('/api/users', usersRoutes);
+app.use('/api/auth', authRoutes);
+
+// Error handling
+const errorHandler = require('./routes/middleware/ErrorHandler');
+
+app.use(errorHandler);
 
 // Serve index.html on any unmatched route (for React Router support)
 app.get('/', (req, res) => {
