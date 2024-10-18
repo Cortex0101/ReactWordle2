@@ -47,7 +47,6 @@ const GameProvider = ({ children }) => {
         }
     }
 
-
     // Delete a letter in the current guess
     const deleteCharacter = () => {
         /* If the current guess at the current col index is not empty, delete it 
